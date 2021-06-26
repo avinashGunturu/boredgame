@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: monospace;
+}
+h1 {
+  font-size: 50px;
+  border-bottom: 0;
+  font-weight: 700;
+}
+h1,
+h2 {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-family: "Roboto Mono", monospace;
+}
+.main-container {
+  width: 40%;
+  height: 40%;
+  background-color: #fff;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.3);
+
+  position: relative;
+}
+
+.main-container.moving {
+  transform: translateX(0);
+  transform: rotate(0deg);
+  animation: rtol 0.4s ease-in-out;
+}
+.content {
+  position: absolute;
+  color: #555;
+  font-size: 16px;
+  width: 90%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content p {
+  text-align: center;
+}
+.btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+@keyframes rtol {
+  0% {
+    transform: translateX(-500px);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translateX(0);
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 667px) {
+  .main-container {
+    height: 40%;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+}
